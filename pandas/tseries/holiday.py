@@ -542,7 +542,22 @@ class USFederalHolidayCalendar(AbstractHolidayCalendar):
         USThanksgivingDay,
         Holiday("Christmas", month=12, day=25, observance=nearest_workday),
     ]
-
+    
+IndianRepublicDay = Holiday(
+    "Republic Day", month=1, day=26)
+)
+IndianIndependenceDay = Holiday(
+    "Independence Day", month=8, day=15)
+)
+GandhiBirthdat = Holiday(
+    "Gandhi Jayanti", month=10, day=2)
+)
+class IndianPublicHolidayCalendar(AbstractHolidayCalendar):
+    rules = [
+        IndianRepublicDay,
+        IndianIndependenceDay,
+        GandhiBirthdat,
+    ]
 
 def HolidayCalendarFactory(name, base, other, base_class=AbstractHolidayCalendar):
     rules = AbstractHolidayCalendar.merge_class(base, other)
